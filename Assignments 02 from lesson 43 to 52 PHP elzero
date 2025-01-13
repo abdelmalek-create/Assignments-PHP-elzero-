@@ -1,0 +1,49 @@
+<?php
+
+// Fist Method
+function get_arguments1 (...$words){
+  foreach ($words as $word):
+    $all = "$word ";
+    echo $all;
+  endforeach;
+}
+echo get_arguments1("Hello", "Elzero", "Web", "School");
+echo "<br>";
+echo get_arguments2("I", "Love", "PHP");
+
+// Separation
+echo "<br>";
+echo "================";
+echo "<br>";
+
+// Second Method
+function get_arguments2() {
+print_r(implode(" ", func_get_args()));
+}
+echo get_arguments2("Hello", "Elzero", "Web", "School");
+echo "<br>";
+echo get_arguments2("I", "Love", "PHP");
+
+// Separation
+echo "<br>";
+echo "================";
+echo "<br>";
+
+// explain
+function get_arguments3() {
+  print_r(func_get_args()); // Array ( [0] => Hello [1] => Elzero [2] => Web [3] => School )
+  echo "<br>";
+  print_r(func_get_arg(0)); // Hello
+  echo "<br>";
+  print_r(func_get_arg(1)); // Elzero
+  echo "<br>";
+  print_r(func_get_arg(2)); // Web
+  echo "<br>";
+  print_r(func_get_arg(3)); // School
+  echo "<br>";
+  print_r(func_num_args()); // 4
+  echo "<br>";
+  print_r(implode(" ", func_get_args())); // Hello Elzero Web School
+  }
+  echo get_arguments3("Hello", "Elzero", "Web", "School");
+?>
